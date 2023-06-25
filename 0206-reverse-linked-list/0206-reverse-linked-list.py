@@ -6,20 +6,19 @@
 '''
 time: O(n) because algo loops over entire length of linked list when reversing
 space: O(1) because algo the size of used vars such as 
-       temp, cur, and nxt are a fixed size - doesn't scale to size of input
+       temp and nxt are a fixed size - doesn't scale to size of input
 '''
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
         temp = None
-        cur = head
         nxt = head
         
         while (nxt != None):
-            nxt = cur.next 
-            cur.next = temp 
-            temp = cur 
-            cur = nxt 
+            nxt = head.next 
+            head.next = temp 
+            temp = head 
+            head = nxt 
             
         return temp
             
