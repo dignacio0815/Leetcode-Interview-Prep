@@ -6,7 +6,6 @@ p ->
 '''
 class Solution:
     def smallestEvenMultiple(self, n: int) -> int:
-        # return self.bruteForce(n)
         return self.optimalSolution(n)
         
     def bruteForce(self, n: int) -> int:
@@ -21,7 +20,4 @@ class Solution:
         return -1
     
     def optimalSolution(self, n: int) -> int:
-        if (n % 2 == 1):
-            return n * 2
-        else:
-            return n
+        return (n * 2) if (n % 2 == 1) else n
