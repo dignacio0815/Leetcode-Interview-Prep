@@ -3,7 +3,7 @@ class Solution:
         return self.trivialSolution(sentences)
         
     def trivialSolution(self, sentences: List[str]) -> int:
-        maxVal = 0
+        maxVal = float('-inf')
         for word in sentences: 
             curWord = word.split(' ')
             if (len(curWord) > maxVal):
