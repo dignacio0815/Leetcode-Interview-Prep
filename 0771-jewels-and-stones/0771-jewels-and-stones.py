@@ -1,7 +1,8 @@
 class Solution:
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
         # return self.solutionOne(jewels, stones)
-        return self.solutionTwo(jewels, stones)
+        # return self.solutionTwo(jewels, stones)
+        return self.solutionThree(jewels, stones)
         
     def solutionOne(self, jewels: str, stones: str) -> int:
         jewelCount = 0
@@ -25,3 +26,13 @@ class Solution:
                 jewelMap[s] += 1
         
         return sum(jewelMap.values())
+    
+    def solutionThree(self, jewels: str, stones: str) -> int:
+        jewelSet = set(jewels)
+        jewelCount = 0
+        
+        for s in stones:
+            if s in jewelSet:
+                jewelCount += 1
+                
+        return jewelCount
