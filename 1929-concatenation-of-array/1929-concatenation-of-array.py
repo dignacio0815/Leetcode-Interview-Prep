@@ -5,3 +5,12 @@ class Solution:
     def solutionOne(self, nums: List[int]) -> List[int]:
         return nums + nums
         
+    def solutionTwo(self, nums: List[int]) -> List[int]:
+        concatList = []
+        for num in nums:
+            concatList.append(num)
+        
+        for num in nums:
+            concatList.append(num)
+            
+        return concatList
