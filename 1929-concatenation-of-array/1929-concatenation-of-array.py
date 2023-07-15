@@ -4,7 +4,4 @@ class Solution:
     
     def solutionOne(self, nums: List[int]) -> List[int]:
         return nums + nums
-    
-    def solutionTwo(self, nums: List[int]) -> List[int]:
-        pass
         
