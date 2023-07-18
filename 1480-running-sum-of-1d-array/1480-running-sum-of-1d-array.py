@@ -2,7 +2,10 @@
 p - array (nums)
 r - list representing the running sum
 e - [1,2,3,4] returns [1,3,6,10]
-p -  
+p - loop through nums and keep tracking of running sum and place that in current element
+
+links:
+- https://realpython.com/lessons/range-vs-enumerate/
 '''
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
