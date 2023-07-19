@@ -5,6 +5,7 @@ class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
         diffArr = []
         left, right = 0, 0
+        
         for i in range(0, len(nums)):
             left = sum(nums[:i])
             right = sum(nums[i+1:])
