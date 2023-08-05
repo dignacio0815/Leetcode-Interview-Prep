@@ -1,7 +1,8 @@
 class Solution:
     def numberOfEmployeesWhoMetTarget(self, hours: List[int], target: int) -> int:
         
-        return self.solutionUsingForLoop(hours, target)
+        return self.solutionUsingFilter(hours, target)
+        # return self.solutionUsingForLoop(hours, target)
         
         
     def solutionUsingForLoop(self, hours: List[int], target: int) -> int:
@@ -12,3 +13,11 @@ class Solution:
                 employeeCount += 1
                 
         return employeeCount
+    
+    def solutionUsingFilter(self, hours: List[int], target: int) -> int:
+        def targetHours(hour: int):
+            return hour >= target
+        
+        employees = filter(targetHours, hours)
+        
+        return len(list(employees))
