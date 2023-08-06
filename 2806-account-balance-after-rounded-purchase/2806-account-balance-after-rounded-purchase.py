@@ -3,4 +3,4 @@ class Solution:
         amount = purchaseAmount % 10
         if (amount >= 5):
             return 100 - (math.ceil(purchaseAmount) + 10 - amount)
-        return 100 - (math.floor(purchaseAmount) - (amount))
+        return 100 - (math.floor(purchaseAmount) - amount)
