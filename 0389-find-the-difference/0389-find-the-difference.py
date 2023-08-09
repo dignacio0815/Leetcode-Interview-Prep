@@ -1,14 +1,15 @@
-'''
-resource links:
-- https://www.programiz.com/python-programming/methods/built-in/enumerate
-'''
 class Solution:
     def findTheDifference(self, s: str, t: str) -> str:
-        s = ''.join(sorted(s))
-        t = ''.join(sorted(t))
+        letters = [0] * 26
+        # ascii lowercase alphabet a-z = 97-122
+        for l in s:
+            letters[ord(l.lower()) - ord('a')] += 1
         
-        for idx, letter in enumerate(s):
-            if (s[idx] != t[idx]):
-                return t[idx]
-        
-        return t[-1]        
+        for l in t:
+            letters[ord(l.lower()) - ord('a')] -= 1
+                
+        for idx, val in enumerate(letters):
+            if val != 0:
+                return chr(idx + ord('a'))
+            
+        return chr(ord('a'))
