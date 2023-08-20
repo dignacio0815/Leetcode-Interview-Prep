@@ -1,23 +1,27 @@
 class Solution:
     def findNonMinOrMax(self, nums: List[int]) -> int:
-        return self.solutionUsingFilter(nums)
+        return self.constantTime(nums)
+        # return self.solutionWithoutFilter(nums)
+        # return self.solutionUsingFilter(nums)
+        
+    def solutionWithoutFilter(self, nums):
         minVal = min(nums)
         maxVal = max(nums)
-        temp = minVal
         
         for n in nums:
             if n < maxVal and n > minVal:
-                temp = n
-        if minVal == temp or maxVal == temp:
-            return -1
-        return temp
+                return n
+        return -1
     
-        
-        
     def solutionUsingFilter(self, nums):
         minVal = min(nums)
         maxVal = max(nums)
 
-        for x in filter(lambda x: x != minVal and x != maxVal, nums):
-            return x
-        return -1
+        try:
+            return next(filter(lambda x: x != minVal and x != maxVal, nums))    
+        except:
+            return -1
+
+    def constantTime(self, nums):
+        return sorted(nums[:3])[1] if len(nums) > 2 else -1
+        
