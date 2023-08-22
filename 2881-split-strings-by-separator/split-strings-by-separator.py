@@ -1,6 +1,6 @@
 class Solution:
     def splitWordsBySeparator(self, words: List[str], separator: str) -> List[str]:
-        return self.usingSplit(words, separator)
+        return self.solutionWithSplit(words, separator)
      
     def usingSplit(self, words: List[str], separator: str) -> List[str]:
         arr = []
@@ -27,3 +27,10 @@ class Solution:
                 arr.append(stringBuilder)
         return arr
     
+    def solutionWithSplit(self, words: List[str], separator: str) -> List[str]:
+        arr = []
+        tempArr = separator.join(words).split(separator)
+        for w in tempArr:
+            if w != "":
+                arr.append(w)
+        return arr
