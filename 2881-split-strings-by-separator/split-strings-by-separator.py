@@ -1,7 +1,16 @@
 class Solution:
     def splitWordsBySeparator(self, words: List[str], separator: str) -> List[str]:
-        return self.withoutUsingSplit(words, separator)
+        return self.usingSplit(words, separator)
      
+    def usingSplit(self, words: List[str], separator: str) -> List[str]:
+        arr = []
+        for w in words:
+            tempArr = w.split(separator)
+            for i in tempArr:
+                if i != "":
+                    arr.append(i)
+        return arr
+        
     def withoutUsingSplit(self, words: List[str], separator: str) -> List[str]:
         arr = []
         for w in words:
