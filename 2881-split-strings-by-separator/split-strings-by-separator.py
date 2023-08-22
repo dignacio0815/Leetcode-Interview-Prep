@@ -5,16 +5,14 @@ class Solution:
     def withoutUsingSplit(self, words: List[str], separator: str) -> List[str]:
         arr = []
         for w in words:
+            w += separator
             stringBuilder = ""
             for idx in range(len(w)):
                 if w[idx] != separator:
                     stringBuilder += w[idx]
                 else:
-                    # if (stringBuilder != ""):
                     arr.append(stringBuilder)
                     stringBuilder = ""
-            # if (stringBuilder != ""):
-            arr.append(stringBuilder)
         return [w for w in arr if w != ""]
     
     def solutionWithSplit(self, words: List[str], separator: str) -> List[str]:
