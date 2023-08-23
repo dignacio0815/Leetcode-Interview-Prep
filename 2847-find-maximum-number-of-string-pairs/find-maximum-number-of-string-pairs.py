@@ -1,0 +1,17 @@
+'''
+notes:
+- 0 indexed array with distinct strings
+- pairs are classified as words[i] == reverse(words[j]) where 0 <= i < j < words.length
+'''
+class Solution:
+    def maximumNumberOfStringPairs(self, words: List[str]) -> int:
+        return self.nestedForLoopSolution(words)
+
+    def nestedForLoopSolution(self, words: List[str]) -> int:
+        numPairs = 0
+        for i in range(len(words)):
+            for j in range(i + 1, len(words)):
+                if words[i] == words[j][::-1]:
+                    numPairs += 1
+                    break
+        return numPairs
