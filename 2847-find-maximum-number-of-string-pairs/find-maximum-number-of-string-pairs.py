@@ -6,6 +6,7 @@ notes:
 class Solution:
     def maximumNumberOfStringPairs(self, words: List[str]) -> int:
         return self.solutionWithSet(words)
+        # return self.nestedForLoopSolution(words)
 
     def solutionWithNestForLoop(self, words: List[str]) -> int:
         numPairs = 0
