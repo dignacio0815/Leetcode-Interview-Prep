@@ -4,10 +4,6 @@ class Solution:
 
         # return self.extractingDigits(num)
 
-    def extractingDigits(self, num: int) -> int:
-            
-        return count
-
     def getDigits(self, num: int) -> int:
         # assume num is 3248
         # log_10(1) = 0
@@ -16,10 +12,7 @@ class Solution:
         # log_10(1000) = 3
         # log_10(3248) = 3.?
         # log_10(10000) = 4
-        power = 10**math.ceil(math.log10(num))
-        if power > num:
-            power //= 10
-
+        power = 10**int(math.log10(num))
         temp = num
         while power > 0:
             digit = temp // power
