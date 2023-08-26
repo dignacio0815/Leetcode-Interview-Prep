@@ -16,4 +16,4 @@ class Solution:
         elif root.val == 0:
             return False
         else:
-            return False
+            return
