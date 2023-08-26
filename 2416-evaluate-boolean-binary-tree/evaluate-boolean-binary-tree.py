@@ -15,4 +15,4 @@ class Solution:
         rightResult = self.evaluateTree(root.right)
 
         # assemble child results for our current node
-        return leftResult and rightResult if root.val == 3 else leftResult or rightResult
+        return (leftResult and rightResult) if root.val == 3 else (leftResult or rightResult)
