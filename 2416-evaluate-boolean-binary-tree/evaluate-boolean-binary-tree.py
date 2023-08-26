@@ -15,5 +15,3 @@ class Solution:
             return True
         elif root.val == 0:
             return False
-        else:
-            return
