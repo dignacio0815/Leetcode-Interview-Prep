@@ -9,7 +9,6 @@ class Solution:
         return self.recursion(root)
         # return self.shortCiruit(root)
 
-
     def shortCiruit(self, root: Optional[TreeNode]) -> bool:
         if root is None or (0 <= root.val <= 1):
             return root is not None and root.val == 1
