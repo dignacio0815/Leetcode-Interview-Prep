@@ -9,19 +9,16 @@ class Solution:
         return count
 
     def getDigits(self, num: int) -> int:
-        digits = []
         temp = num
         # return [int(d) for d in str(num)]
         while temp > 0:
             # get right most digit
             digit = temp % 10
             
-            digits.append(digit)
+            yield digit
 
             # interger divide num
             temp //= 10
-        
-        return digits
 
 
 
