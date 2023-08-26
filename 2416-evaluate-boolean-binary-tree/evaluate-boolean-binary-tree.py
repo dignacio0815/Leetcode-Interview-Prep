@@ -6,12 +6,9 @@
 #         self.right = right
 class Solution:
     def evaluateTree(self, root: Optional[TreeNode]) -> bool:
-        # base cases lines 10 - 14
-        if root.val == 1:
-            return True
-
-        if root.val == 0:
-            return False
+        # base cases lines 10 - 11
+        if root is None or 0 <= root.val <= 1:
+            return root is not None and root.val == 1
         
         # compute child results
         leftResult = self.evaluateTree(root.left)
@@ -23,3 +20,5 @@ class Solution:
 
         if root.val == 2:
             return leftResult or rightResult
+
+        
