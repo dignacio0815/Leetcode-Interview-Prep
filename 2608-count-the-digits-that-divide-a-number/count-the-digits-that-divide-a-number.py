@@ -16,8 +16,10 @@ class Solution:
         # log_10(1000) = 3
         # log_10(3248) = 3.?
         # log_10(10000) = 4
+        power = 10**math.ceil(math.log10(num))
+        if power > num:
+            power //= 10
 
-        power = 10**int(math.log10(num))
         temp = num
         while power > 0:
             digit = temp // power
@@ -25,8 +27,6 @@ class Solution:
 
             temp %= power
             power //= 10
-
-
 
         # return [int(d) for d in str(num)]
         # while temp > 0:
