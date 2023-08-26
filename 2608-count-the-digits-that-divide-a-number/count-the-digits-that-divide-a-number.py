@@ -20,5 +20,4 @@ class Solution:
             # interger divide num
             temp //= 10
             
-
         return count
