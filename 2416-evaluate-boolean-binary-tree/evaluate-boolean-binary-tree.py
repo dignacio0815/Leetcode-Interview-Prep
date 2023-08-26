@@ -21,7 +21,7 @@ class Solution:
         return self.shortCiruit(root.right)
 
     def recursion(self, root: Optional[TreeNode]) -> bool:
-        # base cases lines 10 - 11
+        # base cases lines 25 - 26
         if root is None or 0 <= root.val <= 1:
             return root is not None and root.val == 1
         
