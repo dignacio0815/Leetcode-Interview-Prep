@@ -31,6 +31,4 @@ class Solution:
         if root.val < val:
             return self.searchBSTCheckingVals(root.right, val)
         
-        if root.val > val:
-            return self.searchBSTCheckingVals(root.left, val)
-        # return self.searchBSTCheckingVals(root.left, val)
+        return self.searchBSTCheckingVals(root.left, val)
