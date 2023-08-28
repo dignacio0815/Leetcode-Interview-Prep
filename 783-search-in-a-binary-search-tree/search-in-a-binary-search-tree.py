@@ -6,7 +6,8 @@
 #         self.right = right
 class Solution:
     def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
-        return self.searchBSTNaive(root, val)
+        return self.searchBSTCheckingVals(root, val)
+        # return self.searchBSTNaive(root, val)
     
     def searchBSTNaive(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         # if root equals none or found the node, return it
@@ -22,3 +23,12 @@ class Solution:
 
         if rightResult:
             return rightResult
+    
+    def searchBSTCheckingVals(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        if not root or root.val == val:
+            return root
+        
+        if root.val < val:
+            return self.searchBSTCheckingVals(root.right, val)
+        
+        return self.searchBSTCheckingVals(root.left, val)
