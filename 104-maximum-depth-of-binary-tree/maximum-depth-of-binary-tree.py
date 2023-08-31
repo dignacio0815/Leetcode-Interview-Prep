@@ -6,16 +6,10 @@
 #         self.right = right
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        # return self.maxDepthWithRecursion(root)
-        return self.maxDepthWithRecurionOneLiner(root)
-
-    def maxDepthWithRecursion(self, root: Optional[TreeNode]) -> int:
-        if root:
-            leftResult = 1 + self.maxDepthWithRecursion(root.left)
-            rightResult = 1 + self.maxDepthWithRecursion(root.right)
-            return max(leftResult, rightResult)
-        else:
+        if not root:
             return 0
 
-    def maxDepthWithRecurionOneLiner(self, root: Optional[TreeNode]) -> int:
-        return max(1 + self.maxDepthWithRecurionOneLiner(root.left), 1 + self.maxDepthWithRecurionOneLiner(root.right)) if root else 0
+        leftResult = self.maxDepth(root.left) 
+        rightResult = self.maxDepth(root.right)
+
+        return max(leftResult, rightResult) + 1
