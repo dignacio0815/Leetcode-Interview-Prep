@@ -6,10 +6,10 @@
 #         self.right = right
 class Solution:
     def findSecondMinimumValue(self, root: Optional[TreeNode]) -> int:
-        allVals = list(set(self.findAllValues(root)))
+        allVals = sorted(set(self.findAllValues(root)))
         if len(allVals) < 2:
             return -1
-        allVals.sort()
+        # allVals.sort()
         return allVals[1]
 
     def findAllValues(self, root: Optional[TreeNode]):
