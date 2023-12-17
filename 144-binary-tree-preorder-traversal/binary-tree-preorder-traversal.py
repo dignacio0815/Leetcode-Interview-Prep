@@ -13,9 +13,7 @@ class Solution:
                 preorderList.append(root.val)
                 preorder(root.left)
                 preorder(root.right)
-            if not root:
-                return
-        
+                
         preorder(root)
 
         return preorderList
