@@ -2,10 +2,10 @@ class Solution {
     fun isAnagram(s: String, t: String): Boolean {
         // sorting, hashing, bruteforce
         // val alphabet = HashMap<Char, Int>()
-        val alphabet = mutableMapOf<Char, Int>()
-        // Add the alphabet to the hashmap
-        for (ch in 'a'..'z') {
-            alphabet[ch] = 0
+        val alphabet = mutableMapOf<Char, Int>().apply {
+            for (ch in 'a'..'z') {
+                put(ch, 0)
+            }
         }
 
         // loop through s and t and add / subtract their letters
