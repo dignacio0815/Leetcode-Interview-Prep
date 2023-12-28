@@ -18,11 +18,14 @@ class Solution {
 
         for (i in 0..s.length - 2) {
             if (s[i] == 'I' && (s[i + 1] == 'V' || s[i + 1] == 'X')) {
-                count -= 1
+                // subtracting by 1
+                count -= map[s[i]] ?: 0
             } else if (s[i] == 'X' && (s[i + 1] == 'L' || s[i + 1] == 'C')) {
-                count -= 10
+                // subtracting by 10
+                count -= map[s[i]] ?: 0
             } else if (s[i] == 'C' && (s[i + 1] == 'D' || s[i + 1] == 'M')) {
-                count -= 100
+                // subtracting by 100
+                count -= map[s[i]] ?: 0
             } else {
                 count += map[s[i]] ?: 0
             }
