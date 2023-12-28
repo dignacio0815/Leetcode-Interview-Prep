@@ -10,8 +10,6 @@ class Solution {
             return false
          */
          for (i in 0 until nums.size) {
-             println("${nums[i]}")
-             println()
              for (j in (i + 1) until nums.size) {
                  if (abs(i - j) <= k && nums[i] == nums[j]) {
                      return true
