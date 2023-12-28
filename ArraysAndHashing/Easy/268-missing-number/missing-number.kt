@@ -8,13 +8,33 @@ class Solution {
             return 0 if missing element is at start
          */
 
-        nums.sort()
-        for (i in 0 until nums.size - 1) {
-            if (nums[i] != nums[i + 1] - 1) {
-                return nums[i + 1] - 1
-            }
-        }
+        // nums.sort()
+        // for (i in 0 until nums.size - 1) {
+        //     if (nums[i] != nums[i + 1] - 1) {
+        //         return nums[i + 1] - 1
+        //     }
+        // }
          
-        return if (nums[0] == 0) nums[nums.size - 1] + 1 else 0
+        // return if (nums[0] == 0) nums[nums.size - 1] + 1 else 0
+
+
+
+        /*
+            if we know we start at 0, and we have to find the missing number
+         */
+        
+        // size is 3
+        var numsSum = 0
+        var finalSum = 0
+
+        for (n in nums) {
+            numsSum += n
+        }
+
+        for (n in 1..nums.size) {
+            finalSum += n
+        }
+
+        return finalSum - numsSum
     }
 }
