@@ -8,6 +8,7 @@ class Solution {
             return 0 if missing element is at start
          */
 
+        // brute force using sorting
         // nums.sort()
         // for (i in 0 until nums.size - 1) {
         //     if (nums[i] != nums[i + 1] - 1) {
@@ -17,13 +18,7 @@ class Solution {
          
         // return if (nums[0] == 0) nums[nums.size - 1] + 1 else 0
 
-
-
-        /*
-            if we know we start at 0, and we have to find the missing number
-         */
-        
-        // size is 3
+        // optimal approach using addition and subtraction
         var numsSum = 0
         var finalSum = 0
 
