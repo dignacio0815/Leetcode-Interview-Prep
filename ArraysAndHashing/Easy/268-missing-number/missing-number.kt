@@ -1,10 +1,11 @@
 class Solution {
     fun missingNumber(nums: IntArray): Int {
         /*
-            init set to hold nums
+            sort nums
             loop through nums 
-                if current element not in set, return
-            return default number
+                if current element doesn't equal next element - 1 return
+            return either nums[size - 1] + 1 (in case missing element is at end)
+            return 0 if missing element is at start
          */
 
         nums.sort()
@@ -15,6 +16,5 @@ class Solution {
         }
          
         return if (nums[0] == 0) nums[nums.size - 1] + 1 else 0
-        
     }
 }
