@@ -8,7 +8,6 @@ class Solution {
 
         nums.forEachIndexed { idx, value -> 
             if (map.containsKey(value)) {
-                println(map)
                 return intArrayOf(map[value] ?: 0, idx)
             } else {
                 map[target - value] = idx
