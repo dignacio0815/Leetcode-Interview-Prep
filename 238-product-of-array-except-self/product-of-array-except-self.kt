@@ -9,22 +9,22 @@ class Solution {
         val products = IntArray(nums.size) {0}
         var product = 1
 
-
+        // calculate product for prefix list
         nums.forEachIndexed { idx, num -> 
             product *= num
             prefix[idx] = product
         }
 
+        // reset product to 1
         product = 1
+        
+        // calculate product for suffix list
         nums.toMutableList().asReversed().forEachIndexed { idx, num -> 
             product *= num
-            print("$idx ")
             suffix[nums.size - 1 - idx] = product
         }
 
-        println(prefix)
-        println(suffix)
-
+        // calculate product current element which is prefix[i-1] * suffix[i+1] values for current product
         nums.forEachIndexed { idx, value -> 
             if (idx == 0) {
                 product = 1 * suffix[idx + 1]
@@ -35,7 +35,7 @@ class Solution {
             }
             products[idx] = product
         }
-        println(products)
+
         return products
     }
 }
