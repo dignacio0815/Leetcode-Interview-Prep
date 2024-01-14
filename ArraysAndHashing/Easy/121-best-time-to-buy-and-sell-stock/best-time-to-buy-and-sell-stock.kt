@@ -1,17 +1,18 @@
 class Solution {
     fun maxProfit(prices: IntArray): Int {
-        if (prices.size <= 1) return 0
-
-        var buyingStock = prices[0]; var profit = 0
-
-        for (i in 1 until prices.size) {
-            if (prices[i] < buyingStock) {
-                buyingStock = prices[i]
-            } else if (prices[i] > buyingStock) {
-                profit = max(abs(prices[i] - buyingStock), profit)
+        // buying stock should be the min
+        // selling stock should be the max
+        // iterate through array keeping track of selling stock
+        // if an element is greater than buying stock keep track of difference
+        var buyingStock = prices[0]
+        var profit = 0
+        prices.forEach { p -> 
+            if (p < buyingStock) buyingStock = p
+            else {
+                profit = max(profit, p - buyingStock)
             }
         }
-        
+
         return profit
     }
 }
