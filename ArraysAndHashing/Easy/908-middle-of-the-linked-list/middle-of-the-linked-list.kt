@@ -15,7 +15,6 @@ class Solution {
             slowNode = slowNode?.next
             fastNode = fastNode?.next?.next
         }
-
         return slowNode
     }
 }
