@@ -9,17 +9,17 @@
  */
 class Solution {
     fun reverseList(head: ListNode?): ListNode? {
-        var prevNode: ListNode? = null
-        var nextNode: ListNode? = null
-        var currentNode = head
+        var prev: ListNode? = null
+        var cur: ListNode? = head
+        var next: ListNode? = head?.next
 
-        while (currentNode != null) {
-            nextNode = currentNode.next
-            currentNode.next = prevNode
-            prevNode = currentNode
-            currentNode = nextNode
+        while (cur != null) {
+            cur?.next = prev
+            prev = cur
+            cur = next
+            next = next?.next
         }
 
-        return prevNode
+        return prev
     }
 }
