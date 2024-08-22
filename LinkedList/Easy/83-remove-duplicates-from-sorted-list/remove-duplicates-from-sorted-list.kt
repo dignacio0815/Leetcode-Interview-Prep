@@ -9,18 +9,26 @@
  */
 class Solution {
     fun deleteDuplicates(head: ListNode?): ListNode? {
-        var currentNode: ListNode? = head
-        var nextNode: ListNode? = head?.next
-        while (currentNode != null) {
-            // check if current node still equals next node
-            while (currentNode?.`val` == nextNode?.`val`) {
-                nextNode = nextNode?.next
-            }
-            currentNode?.next = nextNode
-            currentNode = currentNode?.next
-            nextNode = currentNode?.next
-        }
+        /*
+            loop while head.next
+                if equals
+                    head?.next = head?.next?.next
+                does not equals
+                    head = head?.next
+            return head
+         */
 
-        return head
+         var h: ListNode? = head
+         var finalNode: ListNode? = null
+
+         while (h?.next != null) {
+            if (h.`val` == h.next.`val`) {
+                h?.next = h?.next?.next
+            } else {
+                if (finalNode == null) { finalNode = h }
+                h = h?.next
+            }
+         }
+        return head ?: finalNode
     }
 }
