@@ -19,16 +19,14 @@ class Solution {
          */
 
          var h: ListNode? = head
-         var finalNode: ListNode? = null
 
          while (h?.next != null) {
             if (h.`val` == h.next.`val`) {
                 h?.next = h?.next?.next
             } else {
-                if (finalNode == null) { finalNode = h }
                 h = h?.next
             }
          }
-        return head ?: finalNode
+        return head
     }
 }
