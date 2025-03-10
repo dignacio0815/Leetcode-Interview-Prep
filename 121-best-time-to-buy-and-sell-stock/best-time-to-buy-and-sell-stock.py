@@ -6,11 +6,9 @@ class Solution:
 
         for n in prices:
             if n < currentMin:
-                currentMin = n # 0
-                currentMax = currentMin
+                currentMin = n
+                currentMax = currentMin # resets currentMax to currentMin in order to find only max profit starting from this day and beyond
             elif n > currentMax:
-                currentMax = n # 2
-                print(f"current max is {currentMax}")
+                currentMax = n
                 profit = max(profit, currentMax - currentMin)
-            # print(f"current max is {currentMax} and min is {currentMin} with n being {n}")
         return profit
