@@ -12,8 +12,7 @@ class Solution:
             l.append(maxVal[0])
             d.pop(maxVal[0])
             k -= 1
-        print(d)
-        print(l)
+        
         return l 
 """
 given k, return k most frequent meaning give the numbers in the list that appear the most times but only the top "k" numbers
