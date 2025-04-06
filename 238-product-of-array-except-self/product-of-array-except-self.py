@@ -13,7 +13,6 @@ class Solution:
             
             postProduct *= nums[len(nums) - i - 1]            
             postfix[len(nums) - i - 1] = postProduct
-        print(postfix)
 
         for i in range(len(nums)):
             left  = prefix[i-1] if i - 1 >= 0 else 1
